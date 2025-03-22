@@ -1,5 +1,8 @@
 import json
 import re
+import argparse
+
+#jsonファイル内で重複している可能性を排除するプログラムです。必要に応じて活用してください
 
 def merge_records(records):
     """
@@ -20,8 +23,13 @@ def merge_records(records):
     return list(merged.values())
 
 def main():
+    
+    parser = argparse.ArgumentParser(description="JSON ファイルを指定して実行します。")
+    parser.add_argument("input_file", help="入力 JSON ファイルのパス")
+    args = parser.parse_args()
+    
     # 入力 JSON ファイルのパス（適宜変更してください）
-    input_file = "QR_data.json"
+    input_file = args
     # 出力 JSON ファイルのパス（適宜変更してください）
     output_file = "merged_output.json"
 

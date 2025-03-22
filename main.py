@@ -13,7 +13,7 @@ def main():
     args = parser.parse_args()
     
     # 新規レコード群の読み込み
-    with open("merged_output.json", "r", encoding="utf-8") as f:
+    with open(args, "r", encoding="utf-8") as f:
         new_records = json.load(f)
 
     print("既存ページをクエリ中...")
